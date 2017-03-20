@@ -1,0 +1,53 @@
+﻿生成启动时间为 2017/3/19 15:53:57。
+     1>项目“D:\visual studio 2010\Projects\HammingDistance\HammingDistance\HammingDistance.vcxproj”在节点 2 上(Build 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(381,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (HammingDistance.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+     1>ClCompile:
+         D:\visual studio 2010\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Solution.cpp
+         Solution.cpp
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(47): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(65): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(66): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(74): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(78): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(96): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(98): warning C4244: “参数”: 从“double”转换到“unsigned int”，可能丢失数据
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(101): warning C4244: “参数”: 从“double”转换到“unsigned int”，可能丢失数据
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(151): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(152): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(169): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(209): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(227): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(240): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(247): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(248): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(262): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(305): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(374): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(441): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(658): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(670): warning C4101: “sum”: 未引用的局部变量
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(831): warning C4101: “tmp”: 未引用的局部变量
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(851): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(946): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(978): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(988): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(1098): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(1100): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(1102): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(1215): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(1340): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(1346): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(1392): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(1564): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(696): warning C4715: “Solution::twoSum”: 不是所有的控件路径都返回值
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(1103): warning C4715: “Solution::integerBreak”: 不是所有的控件路径都返回值
+     1>d:\visual studio 2010\projects\hammingdistance\hammingdistance\solution.cpp(1312): warning C4715: “Solution::missingNumber”: 不是所有的控件路径都返回值
+       Link:
+         D:\visual studio 2010\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\visual studio 2010\Projects\HammingDistance\Debug\LeetCodeSolution.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\visual studio 2010\Projects\HammingDistance\Debug\LeetCodeSolution.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\visual studio 2010\Projects\HammingDistance\Debug\LeetCodeSolution.lib" /MACHINE:X86 Debug\main.obj
+         Debug\Solution.obj
+         HammingDistance.vcxproj -> D:\visual studio 2010\Projects\HammingDistance\Debug\LeetCodeSolution.exe
+     1>已完成生成项目“D:\visual studio 2010\Projects\HammingDistance\HammingDistance\HammingDistance.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:02.44
