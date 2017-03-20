@@ -1,3 +1,4 @@
+#pragma once
 #include <vector>
 #include <queue>
 #include <unordered_set>
@@ -107,4 +108,8 @@ public:
 	ListNode* oddEvenList(ListNode* head);
 	int findDuplicate(vector<int>& nums);
 	int rob(TreeNode* root);
+	int longestPalindromeSubseq(string s);
+	vector<int> diffWaysToCompute(string input);
+	int bulbSwitch(int n);
+	int maxCoins(vector<int>& nums);
 };

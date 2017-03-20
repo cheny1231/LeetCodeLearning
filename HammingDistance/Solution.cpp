@@ -1602,6 +1602,99 @@
 	 }
  }
 
- int Solution::rob(TreeNode* root){
+ vector<int> robHelper(TreeNode* root){
+	 vector<int> res(2, 0);
+	 if (root == NULL) return res;
 
+	 vector<int> left = robHelper(root->left);
+	 vector<int> right = robHelper(root->right);
+
+	 res[0] = (left[0] > left[1] ? left[0] : left[1]) + (right[0] > right[1] ? right[0] : right[1]);
+	 res[1] = root->val + left[0] + right[0];
+
+	 return res;
+ }
+
+ int Solution::rob(TreeNode* root){
+	 vector<int> res = robHelper(root);
+	 return res[0] > res[1] ? res[0] : res[1];
+ }
+
+ int Solution::longestPalindromeSubseq(string s){
+	 int n = s.size();
+	 vector<vector<int>> res(n, vector<int>(n, 0));
+	 for (int i = 0; i < n; i++){
+		 res[i][i] = 1;
+	 }
+	 for (int i = n - 2; i >= 0; i--){
+		 for (int j = i + 1; j < n; j++){
+			 if (s[i] == s[j]){
+				 res[i][j] = res[i + 1][j - 1] + 2;
+			 }
+			 else{
+				 res[i][j] = res[i + 1][j] > res[i][j - 1] ? res[i + 1][j] : res[i][j - 1];
+			 }
+		 }
+	 }
+	 return res[0][n - 1];
+ }
+
+ vector<int> diffWaysToComputeHelper(string input, map<string, vector<int>> &dp){
+	 vector<int> res;
+	 int n = input.size();
+	 for (int i = 0; i < n; i++){
+		 char cur = input[i];
+		 if (cur == '+' || cur == '-' || cur == '*'){
+			 string substrLeft = input.substr(0, i);
+			 string substrRight = input.substr(i + 1);
+			 vector<int> resultLeft, resultRight;
+			 if (dp.find(substrLeft) != dp.end())
+				 resultLeft = dp[substrLeft];
+			 else
+				 resultLeft = diffWaysToComputeHelper(substrLeft, dp);
+			 if (dp.find(substrRight) != dp.end())
+				 resultRight = dp[substrRight];
+			 else
+				 resultRight = diffWaysToComputeHelper(substrRight, dp);
+			 for (auto left : resultLeft){
+				 for (auto right : resultRight){
+					 switch (cur){
+					 case '+': res.push_back(left + right); break;
+					 case '-': res.push_back(left - right); break;
+					 case '*': res.push_back(left * right); break;
+					 }
+				 }
+			 }
+		 }
+	 }
+	 if (res.empty()) res.push_back(atoi(input.c_str()));
+	 dp[input] = res;
+	 return res;
+ }
+
+ vector<int> Solution::diffWaysToCompute(string input){
+	 map<string, vector<int>> dp;
+	 diffWaysToComputeHelper(input, dp);
+	 return dp[input];
+ }
+
+ int Solution::bulbSwitch(int n){
+	 return sqrt(n);
+ }
+
+ int Solution::maxCoins(vector<int>& nums){
+	 nums.insert(nums.begin(), 1);
+	 nums.push_back(1);
+	 int n = nums.size();
+	 vector<vector<int>> dp(n, vector<int>(n, 0));
+	 for (int k = 2; k < n; k++){
+		 for (int i = 0; i < n - k; i++){
+			 int j = i + k;
+			 for (int n = i + 1; n < j; n++){
+				 int tmp = dp[i][n] + dp[n][j] + nums[i] * nums[n] * nums[j];
+				 dp[i][j] = dp[i][j] > tmp ? dp[i][j] : tmp;
+			 }
+		 }
+	 }
+	 return dp[0][n - 1];
  }

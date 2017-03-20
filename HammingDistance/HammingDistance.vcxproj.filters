@@ -21,9 +21,15 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Codec.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Solution.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Codec.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>

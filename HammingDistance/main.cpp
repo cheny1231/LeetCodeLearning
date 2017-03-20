@@ -1,6 +1,8 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include "Solution.h"
+#include "Codec.h"
 
 using namespace std;
 
@@ -8,6 +10,7 @@ int main(){
 	int x;
 	/*cin >> x;*/
 	Solution solution;
+	Codec codec;
 	vector<string> input{ "abcw", "baz", "foo", "bar", "xtfn", "abcdef" };
 	vector<int> row_1{ 0,1,5 };
 	vector<int> row_2{ 2,4,6 };
@@ -17,7 +20,7 @@ int main(){
 	vector<pair<int, int>> balloon{ { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 5 } };
 	vector<vector<char>> boardMine{ { 'E', 'E', 'E', 'E', 'E' }, { 'E', 'E', 'M', 'E', 'E' }, { 'E', 'E', 'E', 'E', 'E' }, { 'E', 'E', 'E', 'E', 'E' } };
 	vector<int> num1{ 1, 2, -1,-2,2,1,-2,1 };
-	vector<int> num2{ 0 };
+	vector<int> num2{ 3, 1, 5, 8 };
 	string s = "abbcccAGG";
 	string t = "aa";
 	TreeNode* root = new TreeNode(5);
@@ -29,8 +32,9 @@ int main(){
 	//ListNode* p = new ListNode(2);
 	//l1->next = p;
 	ListNode* l2 = new ListNode(5);
-	int results = solution.findMinArrowShots(balloon);
-	cout << results;
+	int result = solution.maxCoins(num2);
+	cout << result;
+	
 	/*for (string i : results){
 			cout << i << "  ";
 	}*/
