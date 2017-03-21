@@ -1698,3 +1698,97 @@
 	 }
 	 return dp[0][n - 1];
  }
+
+ int combinationSum4Helper(vector<int>& nums, vector<int> &v, int target){
+	 int cnt = 0;
+	 if (v[target] != -1) return v[target];
+	 for (int i = 0; i < nums.size(); i++){
+		 if (nums[i] <= target)
+			cnt += combinationSum4Helper(nums, v, target - nums[i]);
+	 }
+	 v[target] = cnt;
+	 return cnt;
+ }
+
+ int Solution::combinationSum4(vector<int>& nums, int target){
+	 vector<int> v(target + 1, -1);
+	 v[0] = 1;
+	 combinationSum4Helper(nums, v, target);
+	 return v[target];
+ }
+
+ void permuteHelper(vector<vector<int>> &res, vector<int> &v, int n, vector<int> &nums){
+	 for (int i = 0; i < nums.size(); i++){
+		 bool obey = true;
+		 v[n] = nums[i];
+		 for (int j = 0; j < n; j++){
+			 if (v[j] == v[n]){
+				 obey = false;
+				 break;
+			 }
+		 }
+		 if (obey){
+			 if (n == nums.size() - 1){
+				 res.push_back(v);
+				 return;
+			 }
+			 permuteHelper(res, v, n + 1, nums);
+		 }
+	 }
+	 return;
+ }
+
+ vector<vector<int>> Solution::permute(vector<int>& nums){
+	 vector<vector<int>> res;
+	 vector<int> v(nums.size(), -1);
+	 permuteHelper(res, v, 0, nums);
+	 return res;
+ }
+
+ string Solution::addStrings(string num1, string num2){
+	 if (num1.size() > num2.size()) return addStrings(num2, num1);
+	 string res;
+	 string tmp(num2.size() - num1.size(), '0');
+	 num1 = tmp + num1;
+	 
+	 int c = 0;
+	 for (int i = num2.size() - 1; i >= 0; i--){
+		 int sum = num1[i] - '0' + num2[i] - '0' + c;
+		 c = sum / 10;
+		 sum = sum % 10;
+		 res = (char)(sum + '0') + res;
+	 }
+	 if (c > 0)
+		 res = (char)(c + '0') + res;
+	 return res;
+ }
+
+ vector<int> findRightInterval(vector<Interval>& intervals){
+	 map<int, int> hash;
+	 vector<int> res;
+	 for (int i = 0; i < intervals.size(); i++){
+		 hash[intervals[i].start] = i;
+	 }
+	 for (auto in : intervals){
+		 auto it = hash.lower_bound(in.end);
+		 if (it == hash.end()) res.push_back(-1);
+		 else res.push_back(it->second);
+	 }
+	 return res;
+ }
+
+ string Solution::licenseKeyFormatting(string S, int K){
+	 string res;
+	 int cnt = 0;
+	 for (int i = S.size() - 1; i >= 0; i--){
+		 if (S[i] != '-'){
+			 if (cnt == K){
+				 res = '-' + res;
+				 cnt = 0;
+			 }
+			 cnt++;
+			 res = (char)toupper(S[i]) + res;
+		 }
+	 }
+	 return res;
+ }

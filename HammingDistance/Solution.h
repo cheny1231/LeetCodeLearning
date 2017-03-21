@@ -21,6 +21,13 @@ struct ListNode {
 	ListNode(int x) : val(x), next(NULL) {}
 };
 
+ struct Interval {
+	int start;
+	int end;
+	Interval() : start(0), end(0) {}
+	Interval(int s, int e) : start(s), end(e) {}
+};
+
 class Solution {
 public:
 	int hammingDistance(int x, int y);
@@ -112,4 +119,9 @@ public:
 	vector<int> diffWaysToCompute(string input);
 	int bulbSwitch(int n);
 	int maxCoins(vector<int>& nums);
+	int combinationSum4(vector<int>& nums, int target);
+	vector<vector<int>> permute(vector<int>& nums);
+	string addStrings(string num1, string num2);
+	vector<int> findRightInterval(vector<Interval>& intervals);
+	string licenseKeyFormatting(string S, int K);
 };
