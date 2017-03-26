@@ -1792,3 +1792,138 @@
 	 }
 	 return res;
  }
+
+ TreeNode* sortedArrayToBSTHelper(vector<int>& nums){
+	 int n = nums.size();
+	 TreeNode* root = new TreeNode(nums[(n - 1) / 2]);
+	 if (n == 1) return root;
+	 vector<int> left, right;
+	 for (int i = 0; i < (n - 1) / 2; i++){
+		 left.push_back(nums[i]);
+	 }
+	 for (int i = (n + 1) / 2; i < n; i++){
+		 right.push_back(nums[i]);
+	 }
+	 root->left = sortedArrayToBSTHelper(left);
+	 root->right = sortedArrayToBSTHelper(right);
+	 return root;
+ }
+
+ TreeNode* Solution::sortedArrayToBST(vector<int>& nums){
+	 if (nums.empty()) return NULL;
+	 int n = nums.size();
+	 TreeNode* root = new TreeNode(nums[(n - 1) / 2]);
+	 if (n == 1) return root;
+	 vector<int> left, right;
+	 for (int i = 0; i < (n - 1) / 2; i++){
+		 left.push_back(nums[i]);
+	 }
+	 for (int i = (n + 1) / 2; i < n; i++){
+		 right.push_back(nums[i]);
+	 }
+	 if(!left.empty()) root->left = sortedArrayToBST(left);
+	 if (!right.empty()) root->right = sortedArrayToBST(right);
+	 return root;
+ }
+
+ string Solution::decodeString(string s){
+	 string res;
+	 stack<char> st;
+	 string tmp;
+	 int count = 0;
+	 for (int i = 0; i < s.length(); i++){
+		 if (s[i] == ']'){
+			 while (st.top() != '['){
+				 tmp = st.top() + tmp;
+				 st.pop();
+			 }
+			 st.pop();
+			 int k = 1;
+			 while (!st.empty() && isdigit(st.top())){
+				 count += (st.top() - '0') * k;
+				 k = k * 10;
+				 st.pop();
+			 }
+			 for (int j = 0; j < count; j++){
+				 for (char c : tmp)
+					 st.push(c);
+			 }
+			 count = 0;
+			 tmp = "";
+		 }
+		 else
+			 st.push(s[i]);
+	 }
+	 while (!st.empty()){
+		 res = st.top() + res;
+		 st.pop();
+	 }
+	 return res;
+ }
+
+ string Solution::toHex(int num){
+	 //unsigned int tmp;
+	 //if (num < 0) tmp = (INT_MAX << 1) + num + 2;
+	 //else tmp = num;
+	 int tmp = num;
+	 if (num == 0) return "0";
+	 string res;
+	 while (tmp != 0 && res.size() < 8){
+		 int rem = tmp & 15;
+		 if (rem > 9) res = (char)(rem - 10 + 'a') + res;
+		 else res = (char)(rem + '0') + res;
+		 tmp = tmp >> 4;
+	 }
+	 return res;
+ }
+
+ int Solution::singleNumber(vector<int>& nums){
+	 int ones = 0;
+	 int twos = 0;
+	 for (int i : nums){
+		 ones = (ones ^ i) & ~twos;
+		 twos = (twos ^ i) & ~ones;
+	 }
+	 return ones;
+ }
+
+ vector<int> Solution::lexicalOrder(int n){
+	 vector<int> res;
+	 int curr = 1;
+	 for (int i = 0; i < n; i++){
+		 res.push_back(curr);
+		 if (curr * 10 <= n){
+			 curr *= 10;
+		 }
+		 else if (curr % 10 != 9 && curr + 1 <= n){
+			 curr++;
+		 }
+		 else {
+			 while ((curr / 10) % 10 == 9)
+				 curr /= 10;
+			 curr = curr / 10 + 1;
+		 }
+	 }
+	 return res;
+ }
+
+ string Solution::findLongestWord(string s, vector<string>& d){
+	 string res;
+	 if (s == "") return res;
+	 int cnt = 0;
+	 for (string str : d){
+		 int j = 0;
+		 for (int i = 0; i < s.length(); i++){
+			 if (s[i] == str[j])
+				 j++;
+			 if (j == str.size()) break;
+		 }
+		 if (j == str.size()){
+			 if (str.size() > cnt || (str.size() == cnt && str < res) || res == ""){
+				 cnt = j + 1;
+				 res = str;
+			 }
+		 }
+	 }
+	 return res;
+ }

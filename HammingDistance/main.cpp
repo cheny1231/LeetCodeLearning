@@ -20,7 +20,7 @@ int main(){
 	vector<pair<int, int>> balloon{ { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 5 } };
 	vector<vector<char>> boardMine{ { 'E', 'E', 'E', 'E', 'E' }, { 'E', 'E', 'M', 'E', 'E' }, { 'E', 'E', 'E', 'E', 'E' }, { 'E', 'E', 'E', 'E', 'E' } };
 	vector<int> num1{ 1, 2, -1,-2,2,1,-2,1 };
-	vector<int> num2{ 1,2,3 };
+	vector<int> num2{ 1,2,3,4,5 };
 	string s = "abbcccAGG";
 	string t = "aa";
 	TreeNode* root = new TreeNode(5);
@@ -32,8 +32,8 @@ int main(){
 	//ListNode* p = new ListNode(2);
 	//l1->next = p;
 	ListNode* l2 = new ListNode(5);
-	string result = solution.addStrings("723", "456");
-	cout << result;
+	string result = solution.toHex(-1);
+//	cout << INT_MAX;
 	
 	/*for (string i : results){
 			cout << i << "  ";

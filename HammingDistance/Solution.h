@@ -124,4 +124,10 @@ public:
 	string addStrings(string num1, string num2);
 	vector<int> findRightInterval(vector<Interval>& intervals);
 	string licenseKeyFormatting(string S, int K);
+	TreeNode* sortedArrayToBST(vector<int>& nums);
+	string decodeString(string s);
+	string toHex(int num);
+	int singleNumber(vector<int>& nums);
+	vector<int> lexicalOrder(int n);
+	string findLongestWord(string s, vector<string>& d);
 };
